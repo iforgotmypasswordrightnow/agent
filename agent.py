@@ -23,7 +23,7 @@ def backup_file(content: str):
 
     timestamp = datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
     # backup_path = f"{DART_FILE}.{timestamp}.bak"
-    backup_path = os.path.join(BACK_DIR, f"diff_{timestamp}.bak")
+    backup_path = os.path.join(BACK_DIR, f"{DART_FILE}_{timestamp}.bak")
     with open(backup_path, "w") as bf:
         bf.write(content)
     return backup_path
